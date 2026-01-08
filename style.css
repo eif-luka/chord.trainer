@@ -1,0 +1,196 @@
+:root {
+  --bg: #fff9db;
+  --card-bg: #fffbe6;
+  --border: #facc15;
+  --btn-purple: #6d28d9;
+  --btn-blue: #1d4ed8;
+  --btn-blue2: #0ea5e9;
+  --btn-green: #047857;
+  --btn-red: #b91c1c;
+  --btn-brown: #7c2d12;
+  --btn-brown2: #b45309;
+  --btn-yellow: #ca8a04;
+  --text: #1f2933;
+  --shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 8px;
+  background: radial-gradient(circle at top, #fef3c7 0, #fefce8 40%, #e0f2fe 100%);
+  color: var(--text);
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--card-bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 4px 0 10px;
+}
+
+.section {
+  border-top: 2px solid var(--border);
+  padding: 10px 8px;
+}
+
+.section:first-of-type {
+  border-top: none;
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 0;
+  gap: 8px;
+}
+
+.label-row span {
+  font-size: 0.9rem;
+}
+
+.btn-play {
+  min-width: 95px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid #312e81;
+  background: #7c3aed;
+  color: #f9fafb;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.1s, transform 0.1s;
+}
+
+.btn-play:hover {
+  background: #5b21b6;
+  transform: translateY(-1px);
+}
+
+.btn-play.active {
+  background: #c4b5fd;
+  color: #1f2937;
+}
+
+.btn-stop-all {
+  margin-top: 8px;
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #000;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.btn-stop-all:hover {
+  background: #d1d5db;
+}
+
+.answers-title {
+  text-align: center;
+  margin: 6px 0 10px;
+  font-weight: 700;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+  justify-items: center;
+}
+
+.answer-btn {
+  min-width: 120px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid #111827;
+  color: #f9fafb;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+  transition: transform 0.07s, box-shadow 0.07s, filter 0.07s;
+}
+
+.answer-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
+  filter: brightness(0.9);
+}
+
+/* Farben ähnlich zu deinem Screenshot */
+.answer-btn[data-chord="Dur"]        { background: var(--btn-purple); }
+.answer-btn[data-chord="Durmaj"]     { background: var(--btn-green); }
+.answer-btn[data-chord="Dur7"]       { background: var(--btn-blue); }
+.answer-btn[data-chord="Dur6"]       { background: var(--btn-blue2); }
+.answer-btn[data-chord="Moll"]       { background: var(--btn-red); }
+.answer-btn[data-chord="Moll7"]      { background: var(--btn-brown); }
+.answer-btn[data-chord="Moll6"]      { background: #9b1c1c; }
+.answer-btn[data-chord="Vermindert"] { background: var(--btn-yellow); }
+.answer-btn[data-chord="Übermäßig"]  { background: var(--btn-brown2); }
+
+.feedback-box {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  min-height: 1.4em;
+}
+
+.feedback-correct { color: #15803d; font-weight: 600; }
+.feedback-wrong   { color: #b91c1c; font-weight: 600; }
+
+.result-detail {
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.new-chord-wrapper {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.btn-new {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #fb7185;
+  background: #fecaca;
+  color: #7f1d1d;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #f97373;
+  transition: transform 0.07s, box-shadow 0.07s, filter 0.07s;
+}
+
+.btn-new:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #f97373;
+  filter: brightness(0.97);
+}
+
+.small-info {
+  text-align: center;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #4b5563;
+}
