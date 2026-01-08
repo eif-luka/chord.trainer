@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Akkorde hören – Echtes Klavier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Wie heißt dieser Akkord?</h1>
+
+    <!-- Oben: Abspielbereich -->
+    <div class="section">
+      <div class="label-row">
+        <span>Gesuchter Akkord:</span>
+        <button class="btn-play" data-role="chord">Spielen</button>
+      </div>
+      <div class="label-row">
+        <span>Sopranton:</span>
+        <button class="btn-play" data-role="soprano">Spielen</button>
+      </div>
+      <div class="label-row">
+        <span>Altton:</span>
+        <button class="btn-play" data-role="alto">Spielen</button>
+      </div>
+      <div class="label-row">
+        <span>Tenorton:</span>
+        <button class="btn-play" data-role="tenor">Spielen</button>
+      </div>
+      <div class="label-row">
+        <span>Baßton:</span>
+        <button class="btn-play" data-role="bass">Spielen</button>
+      </div>
+      <button class="btn-stop-all" id="btn-stop-all">Alle Töne abschalten</button>
+      <div class="small-info" id="hint-text">
+        Klicke auf „Neuer Akkord“, um zu starten.
+      </div>
+    </div>
+
+    <!-- Mitte: Antwort-Buttons -->
+    <div class="section">
+      <div class="answers-title">Bitte klicken!</div>
+      <div class="answers-grid">
+        <button class="answer-btn" data-chord="Dur">Dur</button>
+        <button class="answer-btn" data-chord="Durmaj">Dur maj</button>
+
+        <button class="answer-btn" data-chord="Dur7">Dur7</button>
+        <button class="answer-btn" data-chord="Dur6">Dur6</button>
+
+        <button class="answer-btn" data-chord="Moll">Moll</button>
+        <button class="answer-btn" data-chord="Moll7">Moll7</button>
+
+        <button class="answer-btn" data-chord="Moll6">Moll6</button>
+        <button class="answer-btn" data-chord="Vermindert">Vermindert</button>
+
+        <button class="answer-btn" data-chord="Übermäßig">Übermäßig</button>
+      </div>
+
+      <div class="feedback-box">
+        <div id="feedback-text"></div>
+        <div id="feedback-detail" class="result-detail"></div>
+      </div>
+
+      <div class="new-chord-wrapper">
+        <button class="btn-new" id="btn-new-chord">Neuer Akkord</button>
+      </div>
+      <div class="small-info">
+        Alle Akkordtypen sind immer aktiv. Einfach immer „Neuer Akkord“ drücken.
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio-Elemente (Safety, werden aber nicht direkt benutzt) -->
+  <audio id="dummy"></audio>
+
+  <!-- SoundFont-Piano von CDN (echtes Sampling, kein Synth) -->
+  <script src="https://unpkg.com/soundfont-player@0.15.7/dist/soundfont-player.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
